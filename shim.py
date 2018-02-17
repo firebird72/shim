@@ -12,7 +12,7 @@ import time
 gear_dict = {'P': 123, 'R': 234, 'N': 345, 'D': 456}
 full_accel = 3450
 full_brake = 450
-mid_steering = 1000
+mid_steering = 2000
 rng_steering = 1000
 
 # Time until disbling autonomy irrespective of incoming value, in seconds.
