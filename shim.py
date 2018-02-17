@@ -9,17 +9,29 @@ gear_dict = {'P': 123, 'R': 234, 'N': 345, 'D': 456}
 # read text file -- -1.0-1.0 on steering; 0.0-1.0 on accel & brake.
 
 steering = 0.2
+
 accel = 0.3
 brake = 0.4
+
 gear = 'D'
+
+autonomy = 1
+ignition = 1
+kill = 0
+
 
 # convert to arduino format
 
 arduino_steering = int((steering + 1.0) * 1000)
+
 arduino_accel = int(accel * 1000)
 arduino_brake = int(brake * 1000)
 
 arduino_gear = gear_dict[gear]
+
+arduino_autonomy = autonomy
+arduino_ignition = ignition
+arduino_kill = kill
 
 # calculate checksum
 
@@ -72,7 +84,27 @@ print(str(arduino_gear_1) + ' ' + str(arduino_gear_2) + ' ' + str(arduino_gear_3
 print('Checksum')
 print(arduino_checksum)
 print(str(arduino_checksum_1) + ' ' + str(arduino_checksum_2) + ' ' + str(arduino_checksum_3) + ' ' + str(arduino_checksum_4))
+print('Autonomy')
+print(arduino_autonomy)
+print(str(arduino_autonomy))
+print('Ignition')
+print(arduino_ignition)
+print(str(arduino_ignition))
+print('Kill')
+print(arduino_kill)
+print(str(arduino_kill))
 
 # send to arduino
+
+print('Sending to arduino:')
+print(str(arduino_steering_1) + str(arduino_steering_2) + str(arduino_steering_3) + str(arduino_steering_4) +
+      str(arduino_accel_1) + str(arduino_accel_2) + str(arduino_accel_3) + str(arduino_accel_4) +
+      str(arduino_brake_1) + str(arduino_brake_2) + str(arduino_brake_3) + str(arduino_brake_4) +
+      str(arduino_gear_1) + str(arduino_gear_2) + str(arduino_gear_3) + str(arduino_gear_4) +
+      str(arduino_autonomy) +
+      str(arduino_ignition) +
+      str(arduino_kill) +
+      str(arduino_checksum_1) + str(arduino_checksum_2) + str(arduino_checksum_3) + str(arduino_checksum_4))
+
 # read from arduino
 # write to text file.
